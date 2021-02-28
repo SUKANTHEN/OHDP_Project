@@ -1,0 +1,4 @@
+1)Skin Lesions https://www.fc.up.pt/addi/ph2%20database.html
+2)Available datasets https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6091241/
+3) Realtime Skin lesions -- https://www.dermnetnz.org/topics/melanoma-in-situ-images/?stage=Live
+

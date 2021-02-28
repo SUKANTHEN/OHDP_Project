@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title> Heart Disease Detector </title>
+    <link rel="icon" href="icon2.jpg" type="image" sizes="16x16">
+    <style>
+        body {
+            background-color: #FFFAFA
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <div>
+
+        <nav class="nav nav-pills nav-justified navbar-dark bg-dark">
+            <a class="nav-item nav-link active" href="home.html">Home</a>
+            <a class="nav-item nav-link" href="#">About us</a>
+            <a class="nav-item nav-link" href="#">Contact</a>
+        </nav>
+    </div>
+
+
+    <div class="container">
+        <h2 style="color: red;" class=" text-center mt-3">Heart Disease Risk Analyzer</h2>
+        <section>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+                        <div class="row">
+                            <div class="col text-center">
+
+                            </div>
+                        </div>
+                        <b> {{label}}</b>
+                        <form action="/" method="POST">
+                            <div class="row align-items-center">
+                                <div class="col mt-4">
+                                    <div class="row align-items-center mt-4">
+                                        <div class="col">
+                                            <label><b> Age</b> (in years)</label>
+                                            <input name='age' type="text" class="form-control" placeholder="Age">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center mt-4">
+                                        <div class="col form-group">
+                                            <label> <b> Enter your gender </b></label>
+                                            <select name="sex" id="" class="form-control custom select">
+                        <option value="1">Male</option>
+                        <option value="0">Female</option>
+                    </select>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center mt-4">
+                                        <div class="col form-group">
+                                            <label> <b>Intensity level of chest pain </b></label>
+                                            <select name="cp" id="" class="form-control custom select">
+						<option value="3"> Severe Chest pain </option>
+						<option value="2">Normal chest pain,but persistently contiues</option>
+                        <option value="1">Mild chest pain </option>
+                        <option value="0">No Chest pain </option>
+                    </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row align-items-center mt-4">
+                                <div class="col form-group">
+                                    <label><b> Enter your Resting Blood Pressure </b> (in mm Hg)</label>
+                                    <input name='trestbps' type="text" class="form-control" placeholder="Enter your Blood Pressure value in Resting Condition">
+                                </div>
+                            </div>
+                            <div class="row align-items-center mt-4">
+                                <div class="col form-group">
+                                    <label><b> Enter your Cholesterol value </b> (mg/dl)</label>
+                                    <input name='chol' type="text" class="form-control" placeholder="Enter your cholesterol value">
+                                </div>
+                            </div>
+                            <div class="row align-items-center mt-4">
+                                <div class="col form-group">
+                                    <label> <b>Presence Fasting Blood Sugar</b> (fasting blood sugar > 120 mg/dl = Yes)</label>
+                                    <select name="PFBS" id="" class="form-control custom select">
+                        <option value="1">Yes</option>
+                        
+                        <option value="0">No</option>
+                    </select>
+                                </div>
+                            </div>
+                            <div class="row align-items-center mt-4">
+                                <div class="col form-group">
+                                    <label><b>Resting Electrocardiogram Results</b></label>
+                                    <select name="restecg" id="" class="form-control custom select">
+						<option value="2">Showing probabale or definitive left ventricular hypertrophy by Estes' criterion</option>
+                        <option value="1">Having ST-T wave abnormality</option>
+                        <option value="0">Normal</option>
+                       
+                    </select>
+                                </div>
+                            </div>
+                            <div class="row align-items-center mt-4">
+                                <div class="col form-group">
+                                    <label> <b>Enter your Maximum Heart Rate</b></label>
+                                    <input name='thalach' type="text" class="form-control" placeholder="Enter your Maximum Blood Heart rate achieved during testing">
+                                </div>
+                            </div>
+                            <div class="row align-items-center mt-4">
+                                <div class="col form-group">
+                                    <label> <b>Presence of Exercise induced Angina</b></label>
+                                    <select name="exang" id="" class="form-control custom select">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                                </div>
+                            </div>
+                            <div class="row align-items-center mt-4">
+                                <div class="col form-group">
+                                    <label><b>Enter the value of ST segment depression induced by exercise relative to rest</b></label>
+                                    <input name='oldpeak' type="text" class="form-control" placeholder="old peak value">
+                                </div>
+                            </div>
+                            <div class="row align-items-center mt-4">
+                                <div class="col form-group">
+                                    <label><b>Slope of peak exercise ST segment</b></label>
+                                    <select name="slope" id="" class="form-control custom select">
+						<option value="2">Downsloping</option>
+                        <option value="1">Flat</option>
+                        <option value="0">Upsloping</option>  
+                    </select>
+                                </div>
+                            </div>
+                            <div class="row align-items-center mt-4">
+                                <div class="col form-group">
+                                    <label> <b>Number of major vessels coloured by flouroscopy</b></label>
+                                    <select name="ca" id="" class="form-control custom select">
+						<option value="4">4</option>
+						<option value="3">3</option>
+						<option value="2">2</option>
+                        <option value="1">1</option>
+                        <option value="0">0</option>  
+                    </select>
+                                </div>
+                            </div>
+                            <div class="row align-items-center mt-4">
+                                <div class="col form-group">
+                                    <label><b>thal</b></label>
+                                    <select name="thal" id="" class="form-control custom select">
+						<option valur="3">3</option>
+						<option value="2">2</option>
+                        <option value="1">1</option>
+                        <option value="0">0</option>  
+                    </select>
+                                </div>
+                            </div>
+                            <div class="row align-items-center mt-4">
+                                <div class="col">
+
+                                </div>
+                                <div class="col">
+                                </div>
+                                <div class="row justify-content-start mt-4">
+                                    <div class="col">
+                                        <button class="btn btn-success mt-4" type="submit"> <b>PREDICT</b></button>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    </form>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>
