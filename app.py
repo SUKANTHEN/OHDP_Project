@@ -1,5 +1,6 @@
 import os
 import numpy
+import pickle
 import tensorflow
 from flask import Flask,render_template,request
 from tensorflow.keras.preprocessing.image import load_img,img_to_array
@@ -25,6 +26,9 @@ def read_image_noscale(filename):
   img = img_to_array(img)
   img = img.reshape(1,224,224,3)
   return img
+# HeartRisk Analyser Model
+file=open('trained_files/heartmodel.pkl','rb')
+clf =pickle.load(file)
 # Home page
 @app.route("/", methods=['GET','POST'])
 def home():
@@ -45,9 +49,9 @@ def landingpage():
 def landingpage1():
   return render_template('index1.html')
 # index2 --> Heart disease Risk predictor
-@app.route("/page2.html", methods=['GET','POST'])
+@app.route("/HeartDiseaseClassifier.html", methods=['GET','POST'])
 def landingpage2():
-  return render_template('page2.html')
+  return render_template('HeartDiseaseClassifier.html')
 
 @app.route("/diagnose", methods = ['GET','POST'])
 def diagnose():
@@ -70,6 +74,17 @@ def diagnose():
       return render_template('result.html', product = product_bm, user_image = file_path_rt)
   
   return render_template('result.html')
+
+@app.route('/predict', methods =['POST'])
+def predict():
+  features = [float(i) for i in request.form.values()]
+  array_features = [numpy.array(features)]
+  prediction = clf.predict(array_features)
+  output = prediction
+  if output == 1:
+    return render_template('HeartDiseaseClassifier.html',result = 'Congratulations.. You have a Strong Heart ! You are not Likely to have Heart Diseases!')
+  else:
+    return render_template('HeartDiseaseClassifier.html',result = 'Oops !! You are likely to have heart disease! Consult a Doctor')
 
 if __name__ == "__main__":
   app.run(host='0.0.0.0',port=8080)
