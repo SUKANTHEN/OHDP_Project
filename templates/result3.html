@@ -6,23 +6,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title> Results for Skin Lesion Test </title>
+    <title> Results for Heart Risk Analyser </title>
 </head>
 
 <body>
+    <div>
+
+        <nav class="nav nav-pills nav-justified navbar-dark bg-dark">
+            <a class="nav-item nav-link active" href="home.html">Home</a>
+            <a class="nav-item nav-link" href="landing.html">Products</a>
+            <a class="nav-item nav-link" href="#">About Us</a>
+        </nav>
+    </div>
 
     <div class="container">
 
         <div class="row">
 
             <div class="col-sm">
-                <span class="border border-primary">
-        <img src="{{ user_image }}" alt="User Image" class="img-thumbnail">
-      </span>
-            </div>
-
-            <div class="col-sm">
-                <h1>Skin Lesion Type <span class="badge badge-secondary">{{product}}</span></h1>
+                <h1> Heart Disease Probability <span class="badge badge-secondary"> {{infprob}} </span></h1>
             </div>
 
         </div>
