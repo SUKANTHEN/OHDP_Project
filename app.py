@@ -70,7 +70,7 @@ def diagnose():
       'Dermatofibroma':product_bm[0][2],'Melanoma':product_bm[0][3],'SQ.Cell Carcinoma':product_bm[0][4],
       'Soborroeic Keratosis':product_bm[0][5]}
       product_bm = class_values_mb
-      #product_bm = numpy.argmax(class_prediction_mb)
+      #product_bm = numpy.argmax(class_prediction_mb.max())
       return render_template('result.html', product = product_bm, user_image = file_path_rt)
   
   return render_template('result.html')
